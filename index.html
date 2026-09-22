@@ -134,7 +134,8 @@
                 <h3>Módulo de Inglés</h3>
 
                 <div class="level-buttons-grid">
-                    <button type="button" class="btn-level active" onclick="selectEnglishLevel('A1')">Nivel A1 (Principiante)</button>
+                    <button type="button" class="btn-level active" onclick="selectEnglishLevel('PreA1')">Nivel Pre-A1</button>
+                    <button type="button" class="btn-level" onclick="selectEnglishLevel('A1')">Nivel A1 (Principiante)</button>
                     <button type="button" class="btn-level" onclick="selectEnglishLevel('A2')">Nivel A2 (Básico)</button>
                     <button type="button" class="btn-level" onclick="selectEnglishLevel('B1')">Nivel B1 (Intermedio)</button>
                     <button type="button" class="btn-level disabled" disabled>Nivel B2 (Próximamente)</button>
@@ -143,7 +144,7 @@
                 </div>
 
                 <div id="topics-list-section" class="topics-section">
-                    <h4 id="level-title">Temas Disponibles - Nivel A1</h4>
+                    <h4 id="level-title">Temas Disponibles - Nivel Pre-A1</h4>
                     <div id="topics-grid" class="topics-grid"></div>
                 </div>
 
@@ -217,13 +218,14 @@
                     <button type="button" class="btn-primary" onclick="sendForumMessage()">Enviar</button>
                 </div>
                 <div id="img-preview-container" class="img-preview" style="display:none;">
+                    <img id="img-preview-element" src="" alt="Vista previa" style="max-height: 40px; border-radius: 4px; margin-right: 8px;">
                     <span>Imagen cargada</span>
                     <button type="button" class="btn-text-only" onclick="clearImagePreview()">Quitar</button>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Asistente IA (Oculto en UI pero conservado en DOM para desarrollo) -->
+        <!-- 4. Asistente IA (Oculto en UI pero conservado en DOM) -->
         <section id="tab-ia-chat" class="tab-content mode-conversational" style="display:none;">
             <div class="chat-header-bar">
                 <h2>🤖 Supernova IA</h2>
@@ -359,6 +361,8 @@
                         <p><strong>Estado:</strong> <span id="user-status-indicator" class="status-online">🟢 En línea</span></p>
                         <p><strong>Puntaje:</strong> <span id="user-rating-stars">⭐ 5.0 / 5.0</span></p>
                     </div>
+
+                    <button type="button" class="btn-danger" onclick="logout()" style="margin-top: 15px; width: 100%;">🚪 Cerrar Sesión</button>
                 </div>
 
                 <!-- Insignias -->
@@ -395,7 +399,10 @@
     </main>
 
     <!-- Scripts de la Aplicación -->
-    <script src="english.js" defer></script>
+    <script src="english/englishPreA1.js" defer></script>
+    <script src="english/englishA1.js" defer></script>
+    <script src="english/englishA2.js" defer></script>
+    <script src="english/englishB1.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>
